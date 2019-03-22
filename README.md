@@ -1,3 +1,3 @@
-﻿## Shiftease
+﻿# Shiftease
 
-COMP 330 Project 3
+## COMP 330 Project 3
