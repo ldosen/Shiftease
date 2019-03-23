@@ -1,5 +1,7 @@
 ﻿# Shiftease
 
+## COMP 330 Project 3
+
 **Requirements**
 
 Front-End
