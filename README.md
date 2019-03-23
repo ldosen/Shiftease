@@ -3,6 +3,11 @@
 ## COMP 330 Project 3
 
 **Requirements**
+## Purpose 
+* Our purpose for ShiftEase is 
+## Intended Audience and Reading Suggestions 
+* Our intended audience for ShiftEase is employees who need help in scheduling their meetings and managers who need to create the schedule. 
+* 
 
 Front-End
 
