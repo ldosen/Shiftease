@@ -1,29 +1,12 @@
 ﻿# Shiftease
 
-## COMP 330 Project 3
-
-**Requirements**
-
-# 1 Introduction
-
-## 1.1 Purpose
-
-- Our purpose for ShiftEase is to make the painstacking process of creating schedules easier and more efficient.
-- Also to make the process faster
-
-## 1.3 Intended Audience and Reading Suggestions
-
-- Our intended audience for ShiftEase is employees who need help in scheduling their meetings and managers who need to create the schedule.
-
-## 1.4 Product Scope
-
-# 2 Overall Description
+## LUC COMP 330 Project 3 - Spring 2019
 
 # 1. Introduction
 
 ## 1.1 Purpose
 
-intro to/ tl;dr of scope - why we doin what we doin
+Our purpose for ShiftEase is to make the painstaking process of creating schedules more easily and efficiently, as well as making the process faster.
 
 ## 1.2 Document Conventions
 
@@ -31,8 +14,10 @@ This document uses no special formatting conventions.
 
 ## 1.3 Intended Audience and Reading Suggestions
 
-intended audience: shift managers and their employees. why is it beneficial for them? other possible groups that could benefit.
-reading suggestions: refer people to the overall description section (2) and System Features section.
+Our intended audience for ShiftEase is employees who need help in scheduling their meetings and managers who need to create the schedule.
+
+- why is it beneficial for them? other possible groups that could benefit.
+  reading suggestions: refer people to the overall description section (2) and System Features section.
 
 ## 1.4 Product Scope
 
