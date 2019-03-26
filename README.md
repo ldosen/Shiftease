@@ -3,7 +3,16 @@
 ## COMP 330 Project 3
 
 **Requirements**
+# 1 Introduction 
+## 1.1 Purpose 
+* Our purpose for ShiftEase is to make the painstacking process of creating schedules easier and more efficient. 
+* Also to make the process faster 
 
+## 1.3 Intended Audience and Reading Suggestions 
+* Our intended audience for ShiftEase is employees who need help in scheduling their meetings and managers who need to create the schedule. 
+
+## 1.4 Product Scope 
+# 2 Overall Description 
 Front-End
 
 - Login view
