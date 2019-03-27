@@ -105,7 +105,7 @@ An employee can provide availability information in the same style as Google Cal
 
 ## 5.1 Performance Requirements
 
-Mainly scheduling algorithm itself, speed and accuracy
+Our primary performance requirement is the speed and accuracy of the scheduling algorithm itself, resulting in minimum wait time after it is triggered by the manager and producing a schedule that requires minimal modification following creation. Furthermore, the UI should be clear and flow naturally, making explicit shift times and to whom they belong and smoothly transitioning between views.
 
 ## 5.2 Security Requirements
 
