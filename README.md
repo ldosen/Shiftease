@@ -109,7 +109,7 @@ Our primary performance requirement is the speed and accuracy of the scheduling 
 
 ## 5.2 Security Requirements
 
-Be able to log in, don't get hacked
+Users will be able to create a login id and password, which will be basically encrypted for initial use. Further security upgrades may be implemented when put into institutional use.
 
 ## 5.3 Software Quality Attributes
 
