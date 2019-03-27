@@ -85,7 +85,7 @@ Viewing the schedule is largely static for the user, based purely on how the man
 
 ### 4.2.1 Description and Priority
 
-Making the schedule is also of high priority for Shiftease. Our algorithm will construct a schedule based on employee availability information, and a manager may then make any modifications to the resulting schedule.
+Making the schedule is also of high priority for Shiftease. A preliminary manager setup will include setting all possible shift times and assigning types of shifts to different days. After that, our algorithm will construct a schedule based on employee availability information, and a manager may then make any modifications to the resulting schedule.
 
 ### 4.2.2 Stimulus / Response Sequences
 
@@ -95,9 +95,11 @@ Making the schedule will be triggered by the manager, given the existence of emp
 
 ### 4.3.1 Description and Priority
 
-Providing availability is of medium priority for Shiftease.
+Providing availability is of medium priority for Shiftease. This feature allows employees to input their availability directly into our application as opposed to an outside spreadsheet, removing the inconvenience of having multiple scheduling resources.
 
 ### 4.3.2 Stimulus / Response Sequences
+
+An employee can provide availability information in the same style as Google Calendar, in which visual timeblocks represent possible shifts and indicated availability.
 
 # 5 Other Nonfunctional Requirements
 
