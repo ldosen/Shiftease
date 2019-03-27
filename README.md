@@ -29,9 +29,13 @@ short description of software, what it's for, benefits it provides, objectives a
 
 restate purpose sort of. briefly break down components of project (front-end, back-end, "database", ML)
 
+Shiftease is a web application designed to help people schedule their work shifts in a proper and efficient manner without going through the pains of standard excel scheduling sheet. A long term goal would be to make scheduling more efficent by adding more functionalities and views. 
+
 ## 2.2 Product Functions
 
 main functional requirements: 1) two user interfaces for visualizing the current schedule, one for managers and one for employees, 2) managers can make schedule, 3) employees can input info necessary for manager to make schedule (availability)
+
+The frontend will consist of multiple employee views, manager view, etc. It will also allow users to input schedules, update schedules, and view schedules Certain views will have more capabilities that will allow managers to create recurring schedules and add/delete users. The backend would consist of database which would store ID for certain employees that would be match to scheudle for certain day. It would take in the employee ID, timestamp (start and end date). Lastly, it would check if any employee is working that day and see if there are any conflicts. 
 
 ## 2.3 User Classes and Characteristics
 
