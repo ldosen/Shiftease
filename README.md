@@ -83,15 +83,19 @@ Viewing the schedule is largely static for the user, based purely on how the man
 
 ## 4.2 Make Schedule
 
-**fill in these in style of 4.1**
-
 ### 4.2.1 Description and Priority
 
+Making the schedule is also of high priority for Shiftease. Our algorithm will construct a schedule based on employee availability information, and a manager may then make any modifications to the resulting schedule.
+
 ### 4.2.2 Stimulus / Response Sequences
+
+Making the schedule will be triggered by the manager, given the existence of employee availability information. The manager may then add, remove, or change shifts for any and all individual employees.
 
 ## 4.3 Provide Availability
 
 ### 4.3.1 Description and Priority
+
+Providing availability is of medium priority for Shiftease.
 
 ### 4.3.2 Stimulus / Response Sequences
 
