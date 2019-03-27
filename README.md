@@ -27,8 +27,6 @@ short description of software, what it's for, benefits it provides, objectives a
 
 ## 2.1 Product Perspective
 
-restate purpose sort of. briefly break down components of project (front-end, back-end, "database", ML)
-
 Shiftease is a web application designed to help people schedule their work shifts in a proper and efficient manner without going through the pains of standard excel scheduling sheet. A long term goal would be to make scheduling more efficent by adding more functionalities and views. 
 
 ## 2.2 Product Functions
