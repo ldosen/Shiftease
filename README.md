@@ -113,4 +113,4 @@ Users will be able to create a login id and password, which will be basically en
 
 ## 5.3 Software Quality Attributes
 
-Usability, testability, availability
+The Shiftease UI should feel natural and require minimal instruction for proper use. Shiftease will be testable, particularly in confirming data equivalence between different users. Shiftease will be published publicly with a distinct URL for user convenience.
