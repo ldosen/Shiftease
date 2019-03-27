@@ -85,28 +85,34 @@ Viewing the schedule is largely static for the user, based purely on how the man
 
 ## 4.2 Make Schedule
 
-**fill in these in style of 4.1**
-
 ### 4.2.1 Description and Priority
 
+Making the schedule is also of high priority for Shiftease. A preliminary manager setup will include setting all possible shift times and assigning types of shifts to different days. After that, our algorithm will construct a schedule based on employee availability information, and a manager may then make any modifications to the resulting schedule.
+
 ### 4.2.2 Stimulus / Response Sequences
+
+Making the schedule will be triggered by the manager, given the existence of employee availability information. The manager may then add, remove, or change shifts for any and all individual employees.
 
 ## 4.3 Provide Availability
 
 ### 4.3.1 Description and Priority
 
+Providing availability is of medium priority for Shiftease. This feature allows employees to input their availability directly into our application as opposed to an outside spreadsheet, removing the inconvenience of having multiple scheduling resources.
+
 ### 4.3.2 Stimulus / Response Sequences
+
+An employee can provide availability information in the same style as Google Calendar, in which visual timeblocks represent possible shifts and indicated availability.
 
 # 5 Other Nonfunctional Requirements
 
 ## 5.1 Performance Requirements
 
-Mainly scheduling algorithm itself, speed and accuracy
+Our primary performance requirement is the speed and accuracy of the scheduling algorithm itself, resulting in minimum wait time after it is triggered by the manager and producing a schedule that requires minimal modification following creation. Furthermore, the UI should be clear and flow naturally, making explicit shift times and to whom they belong and smoothly transitioning between views.
 
 ## 5.2 Security Requirements
 
-Be able to log in, don't get hacked
+Users will be able to create a login id and password, which will be basically encrypted for initial use. Further security upgrades may be implemented when put into institutional use.
 
 ## 5.3 Software Quality Attributes
 
-Usability, testability, availability
+The Shiftease UI should feel natural and require minimal instruction for proper use. Shiftease will be testable, particularly in confirming data equivalence between different users. Shiftease will be published publicly with a distinct URL for user convenience.
