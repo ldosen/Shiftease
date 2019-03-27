@@ -27,11 +27,13 @@ short description of software, what it's for, benefits it provides, objectives a
 
 ## 2.1 Product Perspective
 
-restate purpose sort of. briefly break down components of project (front-end, back-end, "database", ML)
+Shiftease is a web application designed to help people schedule their work shifts in a proper and efficient manner without going through the pains of standard excel scheduling sheet. A long term goal would be to make scheduling more efficent by adding more functionalities and views. 
 
 ## 2.2 Product Functions
 
 main functional requirements: 1) two user interfaces for visualizing the current schedule, one for managers and one for employees, 2) managers can make schedule, 3) employees can input info necessary for manager to make schedule (availability)
+
+The frontend will consist of multiple employee views, manager view, etc. It will also allow users to input schedules, update schedules, and view schedules Certain views will have more capabilities that will allow managers to create recurring schedules and add/delete users. The backend would consist of database which would store ID for certain employees that would be match to scheudle for certain day. It would take in the employee ID, timestamp (start and end date). Lastly, it would check if any employee is working that day and see if there are any conflicts. 
 
 ## 2.3 User Classes and Characteristics
 
@@ -83,28 +85,34 @@ Viewing the schedule is largely static for the user, based purely on how the man
 
 ## 4.2 Make Schedule
 
-**fill in these in style of 4.1**
-
 ### 4.2.1 Description and Priority
 
+Making the schedule is also of high priority for Shiftease. A preliminary manager setup will include setting all possible shift times and assigning types of shifts to different days. After that, our algorithm will construct a schedule based on employee availability information, and a manager may then make any modifications to the resulting schedule.
+
 ### 4.2.2 Stimulus / Response Sequences
+
+Making the schedule will be triggered by the manager, given the existence of employee availability information. The manager may then add, remove, or change shifts for any and all individual employees.
 
 ## 4.3 Provide Availability
 
 ### 4.3.1 Description and Priority
 
+Providing availability is of medium priority for Shiftease. This feature allows employees to input their availability directly into our application as opposed to an outside spreadsheet, removing the inconvenience of having multiple scheduling resources.
+
 ### 4.3.2 Stimulus / Response Sequences
+
+An employee can provide availability information in the same style as Google Calendar, in which visual timeblocks represent possible shifts and indicated availability.
 
 # 5 Other Nonfunctional Requirements
 
 ## 5.1 Performance Requirements
 
-Mainly scheduling algorithm itself, speed and accuracy
+Our primary performance requirement is the speed and accuracy of the scheduling algorithm itself, resulting in minimum wait time after it is triggered by the manager and producing a schedule that requires minimal modification following creation. Furthermore, the UI should be clear and flow naturally, making explicit shift times and to whom they belong and smoothly transitioning between views.
 
 ## 5.2 Security Requirements
 
-Be able to log in, don't get hacked
+Users will be able to create a login id and password, which will be basically encrypted for initial use. Further security upgrades may be implemented when put into institutional use.
 
 ## 5.3 Software Quality Attributes
 
-Usability, testability, availability
+The Shiftease UI should feel natural and require minimal instruction for proper use. Shiftease will be testable, particularly in confirming data equivalence between different users. Shiftease will be published publicly with a distinct URL for user convenience.
