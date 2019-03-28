@@ -69,12 +69,9 @@ Requirements to run this software:
 
 ## 3.1 User Interfaces
 
-**put mockups here**
+![calendar view](mock-up/calendar.png)
 
-1. Employee Schedule View
-2. Manager Schedule View
-3. Employee Provide Availability View
-4. Manager make schedule view
+![dropdown](mock-up/dropdown.png)
 
 # 4 System Features
 
