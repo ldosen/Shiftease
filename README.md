@@ -6,59 +6,64 @@
 
 ## 1.1 Purpose
 
-Our purpose for ShiftEase is to make the painstaking process of creating schedules more easily and efficiently, as well as making the process faster.
+The purpose of Shiftease is to make the oftentimes long and arduous process of creating an employee scheduled quick, simple, and pain free. Shiftease automates schedule creation based on employee availability and provides a personalized monthly calendar view for employees and managers, giving employees and quick and easy way to see when they are working as well as managers a tool to rapidly see who is working when.
 
 ## 1.2 Document Conventions
 
-This document uses no special formatting conventions.
+When reading this document, large bolded section headings indicate breaks between different document sections whereas smaller bolded headings indicate the start of different subsections. The body of the subsection text is unbolded 12 point font. 
 
 ## 1.3 Intended Audience and Reading Suggestions
 
-Our intended audience for ShiftEase is employees who need help in scheduling their meetings and managers who need to create the schedule.
-
-- why is it beneficial for them? other possible groups that could benefit.
-  reading suggestions: refer people to the overall description section (2) and System Features section.
+Our intended audience for Shiftease are managers or the like who are responsible for compiling shift availability given by their employeees into a monthly work schedule. Another part of the intended audience for Shiftease are employees looking for a fast way to check their montly work schedule which results in no confusion about the actual times they are scheduled to work. As Shiftease will integrate with Google Forms and Google Sheets, Shiftease may be even more desirable to managers who already use these services to gather availability data and create a schedule as the initial overhead when switching to this service will be very low. 
 
 ## 1.4 Product Scope
 
-short description of software, what it's for, benefits it provides, objectives and goals of the project
+After logging into the application, both employees and managers will be presented with a monthly calendar view. When an employee logs in, days on the calendar when the employee logged in is scheduled to work will be populated with a Google Calendar like event which will show the shift they are scheduled to work. Readers can refer to appendix 1 for a better visual as to what this will look like. From the calendar view, employees can find links to Google Forms for submitting future availability as well as a tool that will easily allow them to search for other employees in the case that they need one of their shifts covered. When a manager logs in, they will be presented with a similar calendar view that will instead display all shifts for every day in the month. When clicked, this event will expand to show the employees currently assigned to this shift so the manager can easily see who should be showing up to work at a given time. From the calendar view the manager can navigate to the schedule creation page where they were be prompted through the automated scheduling process. Once a schedule is generated it will be stored and can be displayed on the calendar view at any time. A final page will allow for managers to make edits to the schedule without having to directly modify the schedule data itself. 
 
 # 2 Overall Description
 
 ## 2.1 Product Perspective
 
-Shiftease is a web application designed to help people schedule their work shifts in a proper and efficient manner without going through the pains of standard excel scheduling sheet. A long term goal would be to make scheduling more efficent by adding more functionalities and views. 
+Shiftease is a web application designed to help managers schedule employee work shifts in a proper and efficient, doing away with other convulated and more labor intensive ways of creating work schedules. A long term goal would be to make scheduling more efficent by adding more functionalities and views. 
 
 ## 2.2 Product Functions
 
-main functional requirements: 1) two user interfaces for visualizing the current schedule, one for managers and one for employees, 2) managers can make schedule, 3) employees can input info necessary for manager to make schedule (availability)
+Employee View:
+- Employees are prompted to log into the service
+- Employees are presented with a personalized pre-prepared calender populated with their work schedule data
+- When looking through shift coverage, emnployees with be prompted through a the process to look up other employees they can contact for coverage
+- A final page will present a series of links to Google Forms where users can submit their availability for the upcoming month, should that form already be created
 
-The frontend will consist of multiple employee views, manager view, etc. It will also allow users to input schedules, update schedules, and view schedules Certain views will have more capabilities that will allow managers to create recurring schedules and add/delete users. The backend would consist of database which would store ID for certain employees that would be match to scheudle for certain day. It would take in the employee ID, timestamp (start and end date). Lastly, it would check if any employee is working that day and see if there are any conflicts. 
+Manager View: 
+- Managers are prompted to log into the service
+- Managers are presented with a pre-prepared calendar which shows the shifts for every day in the month
+- On the create schedule page, managers will answer a few questions, enter exceptions/preferences before the schedule is generated
+- On the edit schedule page, an interface will allow for easy editing of the schedule without direct manipulation of the underlying data
 
 ## 2.3 User Classes and Characteristics
 
-though, as mentioned, this product can potentially benefit a variety of users, we will use the terminology of "employee" and "manager" for the two types of users, referring to a user who is scheduled for shifts and a user who shcedules shifts, respectively
+This product can potentially benefit a variety of users, we will use the terminology of "employee" and "manager" for the two types of users, referring to a user who is scheduled for shifts and a user who shcedules shifts, respectively
 
-1. managers: can make schedules and can view all employees' shifts, 2) employees: can provide availability and view either all employees' shifts or only their own
-   note: intended to help any manager or employee, regardless of demographic or other business attributes
+   - managers: can make schedules and can view all employees' shifts 
+   - employees: can provide availability and view either all employees' shifts or only their own
 
 ## 2.4 Operating Environment
 
-this is a web app, so our product will run in any web browser
+This product will be designed to run in modern web browsers that support the most recent web standards and features. We anticipate that this service will run the best on browsers such as Google Chomre, Mozilla Firefox, and Safari. Older browsers may not support some of the features used in this service.
 
 ## 2.5 Design and Implementation Constraints
 
-internet connection is required, schedule is limited to the information provided by the employees, schedule will not be available to employees until manager makes it
+As this is a web service, an internet connection will be required. As this service uses Google Sheets heavily in the schedule building process, any disruption of access to that service could make the schedule creation feature temporarily unavailable.
 
 ## 2.6 User Documentation
 
-example of how google sheet should be formatted for app to work properly
-see FAQs, manuals, tutorials, etc for how to use the app.
+As the automated schedule creation feature uses the output of a Google Form to a Google Sheet during the scheduling process, an example form will be provided to show managers how to strucutre a form to produce a Google Sheet that the scheduling function can correctly read from. The shift coverage function, schedule creation function, and the schedule editing process implementation are implemented in a self-documenting manner. If users need additional help however, a help page will explain how to use all the different functions of the site.
 
 ## 2.7 Assumptions and Dependencies
 
-you have a modern computer with an up to date web browser (chrome, firefox, ie8 or above) and internet connection.
-manager should have google sheet with users availability filled in according to section 2.6 in this document
+Requirements to run this software:
+- A modern web browser such as Google Chrome, Firefox, or Safari
+- Manager View: access to a Google account which contains a Google Sheet with the properly formatted availability data 
 
 # 3 External Interface Requirements
 
