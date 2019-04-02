@@ -10,11 +10,11 @@ Our purpose for ShiftEase is to make the painstaking process of creating schedul
 
 ## 1.2 Document Conventions
 
-This document uses no special formatting conventions.
+Large, bold, headings indicate breaks between sections, smaller bolder sections indicate subsections, and normal 12pt font is for the subject matter of the report. 
 
 ## 1.3 Intended Audience and Reading Suggestions
 
-Our intended audience for ShiftEase is employees who need help in scheduling their meetings and managers who need to create the schedule.
+Our intended audience for ShiftEase is managers who are making shifts for employees and employees who want a simpler and distilled way to view their personal work schedule. Since Shiftease 
 
 - why is it beneficial for them? other possible groups that could benefit.
   reading suggestions: refer people to the overall description section (2) and System Features section.
