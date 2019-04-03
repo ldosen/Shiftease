@@ -10,11 +10,17 @@ The purpose of Shiftease is to make the oftentimes long and arduous process of c
 
 ## 1.2 Document Conventions
 
+Large, bold, headings indicate breaks between sections, smaller bolder sections indicate subsections, and normal 12pt font is for the subject matter of the report. 
+
+## 1.3 Intended Audience and Reading Suggestions
+
+Our intended audience for ShiftEase is managers who are making shifts for employees and employees who want a simpler and distilled way to view their personal work schedule. Since Shiftease 
 When reading this document, large bolded section headings indicate breaks between different document sections whereas smaller bolded headings indicate the start of different subsections. The body of the subsection text is unbolded 12 point font. 
 
 ## 1.3 Intended Audience and Reading Suggestions
 
 Our intended audience for Shiftease are managers or the like who are responsible for compiling shift availability given by their employeees into a monthly work schedule. Another part of the intended audience for Shiftease are employees looking for a fast way to check their montly work schedule which results in no confusion about the actual times they are scheduled to work. As Shiftease will integrate with Google Forms and Google Sheets, Shiftease may be even more desirable to managers who already use these services to gather availability data and create a schedule as the initial overhead when switching to this service will be very low. 
+
 
 ## 1.4 Product Scope
 
