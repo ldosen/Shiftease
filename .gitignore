@@ -33,6 +33,10 @@ Temporary Items
 
 ### Node ###
 # Logs
+=======
+venv
+.idea
+>>>>>>> 3d5c865debf7b36c6182b8e2f713e2ae205668af
 logs
 *.log
 npm-debug.log*
@@ -133,3 +137,8 @@ typings/
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
 templates/front-end/src/App.test.js
+node_modules/
+jspm_packages/
+build/Release
+.npm
+.env

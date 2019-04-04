@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿# Shiftease
 
 ## LUC COMP 330 Project 3 - Spring 2019
@@ -11,17 +10,11 @@ The purpose of Shiftease is to make the oftentimes long and arduous process of c
 
 ## 1.2 Document Conventions
 
-Large, bold, headings indicate breaks between sections, smaller bolder sections indicate subsections, and normal 12pt font is for the subject matter of the report. 
-
-## 1.3 Intended Audience and Reading Suggestions
-
-Our intended audience for ShiftEase is managers who are making shifts for employees and employees who want a simpler and distilled way to view their personal work schedule. Since Shiftease 
 When reading this document, large bolded section headings indicate breaks between different document sections whereas smaller bolded headings indicate the start of different subsections. The body of the subsection text is unbolded 12 point font. 
 
 ## 1.3 Intended Audience and Reading Suggestions
 
 Our intended audience for Shiftease are managers or the like who are responsible for compiling shift availability given by their employeees into a monthly work schedule. Another part of the intended audience for Shiftease are employees looking for a fast way to check their montly work schedule which results in no confusion about the actual times they are scheduled to work. As Shiftease will integrate with Google Forms and Google Sheets, Shiftease may be even more desirable to managers who already use these services to gather availability data and create a schedule as the initial overhead when switching to this service will be very low. 
-
 
 ## 1.4 Product Scope
 
@@ -125,18 +118,3 @@ Users will be able to create a login id and password, which will be basically en
 ## 5.3 Software Quality Attributes
 
 The Shiftease UI should feel natural and require minimal instruction for proper use. Shiftease will be testable, particularly in confirming data equivalence between different users. Shiftease will be published publicly with a distinct URL for user convenience.
-=======
-## Instructions
-- Make sure to have python, npm, and pip installed on your machine before proceeding. I used the most recent versions of python, npm, nodejs, and pip as of 4/4/19.
-### Installing
-
-1. Run `npm install` in the Shiftease/templates/static/ directory. This should download and install all the required dependencies.
-2. In the same directory as the previous step run the command `npm run watch` to build the front end code
-3. Install flask. Type `$ pip install flask` at the command line.
-4. Install Reactjs. Type `$ npm i react react-dom --save-dev` at the command line.
-
-### Running
-1. In the root directory, run the command `python run.py`
-
-From here you should be able to view the site at [http://127.0.0.1:5000/](http://127.0.0.1:5000/) which should display, at this time, "Hello React!
->>>>>>> 3d5c865debf7b36c6182b8e2f713e2ae205668af
