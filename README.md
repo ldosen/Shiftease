@@ -1,5 +1,7 @@
 ## Instructions
 - Make sure to have python, npm, and pip installed on your machine before proceeding. I used the most recent versions of python, npm, nodejs, and pip as of 4/4/19.
+
+**note:** any time in the instructions a npm install is performed it should be within the Shiftease/templates/static directory. 
 ### Installing
 
 1. Run `npm install` in the Shiftease/templates/static/ directory. This should download and install all the required dependencies.
