@@ -14,6 +14,7 @@ is list[x+1] through list[2x], and so on.
 
 # In this example list, we are trying to schedule 3 people over 2 days, with 2 possible shifts on each day.
 # As such we have 12 data points, 4 per person ie 2 per person per day (I recognize there are really no Sunday tours)
+raw_availabilities = [0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0]
 
 slots_to_fill = {"Saturday": ["10:15am - 11:30am", "11:45am - 1pm"],
                  "Sunday": ["10:15am - 11:30am", "11:45am - 1pm"]}
@@ -22,12 +23,10 @@ slots_to_fill = {"Saturday": ["10:15am - 11:30am", "11:45am - 1pm"],
 # TO-DO: Count this while querying database.
 max_slots = 2
 
+# Total amount of shifts to be scheduled in the selected time period.
 total_shifts = 4
 
-raw_availabilities = [0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0]
-
-# we also get the headings from the table so we can have something to output into the schedule
-
+# Headings from the table so we can have something to output into the schedule
 employees = ["Luke", "George", "Zac"]
 
 # As well as the target number of shifts per time period per person. in a realistic scenario, this would be
@@ -59,9 +58,25 @@ for emp in ordered_employees:
     employees_queue.put(emp)
 
 # Step 2: Step through the schedule and try to schedule someone, checking the constraints to see if its possible.
-
+schedule = [None for x in range(total_shifts)]
+"""
 schedule = [["" for x in range(max_slots)]
             for y in range(len(slots_to_fill))]
+"""
+
+while not employees_queue.empty():
+    current_employee = employees_queue.get()
+    shift_index = 0
+    for x in range(len(schedule)):
+        if schedule[shift_index] == None and employees_dict[current_employee][2][shift_index] == 1:
+            schedule[shift_index] = current_employee
+            employees_dict[current_employee][0] -= 1
+            if employees_dict[current_employee][0] > 0:
+                employees_queue.put(current_employee)
+            break
+        else:
+            shift_index += 1
+
 
 # Step 3: Remove the guide from the queue if they can be scheduled
 # Step 4: Keep track of how many times people have been scheduled to enforce fairness
