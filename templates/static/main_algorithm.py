@@ -13,7 +13,14 @@ is list[x+1] through list[2x], and so on.
 """
 
 # In this example list, we are trying to schedule 3 people over 2 days, with 2 possible shifts on each day.
-# As such we have 12 data points, 4 per person ie 2 per person per day
+# As such we have 12 data points, 4 per person ie 2 per person per day (I recognize there are really no Sunday tours)
+
+slots_to_fill = {"Saturday": ["10:15am - 11:30am", "11:45am - 1pm"],
+                 "Sunday": ["10:15am - 11:30am", "11:45am - 1pm"]}
+
+# Greatest amount of timeslots to be filled in any given day in the selected time period.
+# TO-DO: Count this while querying database.
+max_slots = 2
 
 total_shifts = 4
 
@@ -52,6 +59,10 @@ for emp in ordered_employees:
     employees_queue.put(emp)
 
 # Step 2: Step through the schedule and try to schedule someone, checking the constraints to see if its possible.
+
+schedule = [["" for x in range(max_slots)]
+            for y in range(len(slots_to_fill))]
+
 # Step 3: Remove the guide from the queue if they can be scheduled
 # Step 4: Keep track of how many times people have been scheduled to enforce fairness
 # Step 5: Update the database with the new schedule information
@@ -59,6 +70,9 @@ for emp in ordered_employees:
 
 
 def main():
+    print("schedule:")
+    print(schedule)
+    """
     print("employees_dict value:")
     print(employees_dict)
     print()
@@ -68,6 +82,7 @@ def main():
     print("employees_queue values:")
     while not employees_queue.empty():
         print(employees_queue.get())
+    """
 
 
 if __name__ == '__main__':
