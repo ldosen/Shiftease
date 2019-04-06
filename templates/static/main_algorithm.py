@@ -28,7 +28,7 @@ employees = ["Luke", "George", "Zac"]
 # Also, realistically, there would be conflicts in target shift # per week for each employee, ie not everyone's
 # ideal number can be met. We ain't there yet, so for beginning dev purposes this one happens to fit perfectly.
 
-target_shifts = [7, 1, 2]
+target_shifts = [2, 1, 1]
 
 
 # Step 1.2: Sort the employees into a priority queue based on target # of shifts.
@@ -39,11 +39,12 @@ avbl_index = 0
 emp_index = 0
 
 for employee in employees:
-    employees_dict[employee] = [target_shifts[emp_index],
+    employees_dict[employee] = [target_shifts[emp_index], sum(raw_availabilities[avbl_index: avbl_index + total_shifts]),
                                 raw_availabilities[avbl_index: avbl_index + total_shifts]]
     avbl_index += total_shifts
     emp_index += 1
 
+"""
 # Sort employees list by selection sort (almost directly copied from GeeksForGeeks implementation)
 for i in range(len(employees)):
     # Find the minimum element in remaining
@@ -56,8 +57,10 @@ for i in range(len(employees)):
     # Swap the found minimum element with
     # the first element
     employees[i], employees[min_idx] = employees[min_idx], employees[i]
+"""
 
-ordered_employees = employees
+ordered_employees = sorted(
+    employees_dict, key=lambda k: (employees_dict[k][0], employees_dict[k][1]))
 employees_queue = queue.Queue(maxsize=len(employees))
 
 for emp in ordered_employees:
@@ -71,9 +74,16 @@ for emp in ordered_employees:
 
 
 def main():
+    print("employees_dict value:")
+    print(employees_dict)
+    print()
+    print("ordered_employees values:")
+    print(ordered_employees)
+    """
     print("employees_queue values:")
     while not employees_queue.empty():
         print(employees_queue.get())
+    """
 
 
 if __name__ == '__main__':
