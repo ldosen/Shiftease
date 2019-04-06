@@ -64,11 +64,10 @@ def main():
     print()
     print("ordered_employees values:")
     print(ordered_employees)
-    """
+    print()
     print("employees_queue values:")
     while not employees_queue.empty():
         print(employees_queue.get())
-    """
 
 
 if __name__ == '__main__':
