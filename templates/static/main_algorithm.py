@@ -31,8 +31,8 @@ employees = ["Luke", "George", "Zac"]
 target_shifts = [2, 1, 1]
 
 
-# Step 1.2: Sort the employees into a priority queue based on target # of shifts.
-# TO-DO: if two employees have same number of target shifts, sort those by number of available slots per person.
+# Step 1.2: Sort the employees into a priority queue based primarily on target number of shifts
+# and secondarily (if two employees have same target number of shifts) on number of available slots per person.
 
 employees_dict = {}
 avbl_index = 0
@@ -43,21 +43,6 @@ for employee in employees:
                                 raw_availabilities[avbl_index: avbl_index + total_shifts]]
     avbl_index += total_shifts
     emp_index += 1
-
-"""
-# Sort employees list by selection sort (almost directly copied from GeeksForGeeks implementation)
-for i in range(len(employees)):
-    # Find the minimum element in remaining
-    # unsorted array
-    min_idx = i
-    for j in range(i+1, len(employees)):
-        if employees_dict[employees[min_idx]][0] > employees_dict[employees[j]][0]:
-            min_idx = j
-
-    # Swap the found minimum element with
-    # the first element
-    employees[i], employees[min_idx] = employees[min_idx], employees[i]
-"""
 
 ordered_employees = sorted(
     employees_dict, key=lambda k: (employees_dict[k][0], employees_dict[k][1]))
