@@ -14,7 +14,7 @@ is list[x+1] through list[2x], and so on.
 
 # In this example list, we are trying to schedule 3 people over 2 days, with 2 possible shifts on each day.
 # As such we have 12 data points, 4 per person ie 2 per person per day (I recognize there are really no Sunday tours)
-raw_availabilities = [0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0]
+raw_availabilities = [0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0]
 
 slots_to_fill = {"Saturday": ["10:15am - 11:30am", "11:45am - 1pm"],
                  "Sunday": ["10:15am - 11:30am", "11:45am - 1pm"]}
@@ -64,15 +64,25 @@ schedule = [["" for x in range(max_slots)]
             for y in range(len(slots_to_fill))]
 """
 
+print("scheduling algorithm:")
+
 while not employees_queue.empty():
     current_employee = employees_queue.get()
+    print("current_employee:")
+    print(current_employee)
     shift_index = 0
     for x in range(len(schedule)):
+        print("shift_index:")
+        print(shift_index)
         if schedule[shift_index] == None and employees_dict[current_employee][2][shift_index] == 1:
             schedule[shift_index] = current_employee
+            print("employee scheduled for shift")
             employees_dict[current_employee][0] -= 1
+            print("employee remaining shifts after scheduling:")
+            print(employees_dict[current_employee][0])
             if employees_dict[current_employee][0] > 0:
                 employees_queue.put(current_employee)
+                print("employee re-added to queue")
             break
         else:
             shift_index += 1
