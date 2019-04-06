@@ -15,6 +15,8 @@ is list[x+1] through list[2x], and so on.
 # In this example list, we are trying to schedule 3 people over 2 days, with 2 possible shifts on each day.
 # As such we have 12 data points, 4 per person ie 2 per person per day
 
+total_shifts = 4
+
 raw_availabilities = [0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0]
 
 # we also get the headings from the table so we can have something to output into the schedule
@@ -32,9 +34,24 @@ target_shifts = [1, 1, 2]
 # Step 1.2: Sort the employees into a priority queue based on target # of shifts, and after that based on
 # # of available slots.
 
+employees_dict = {}
+
+avbl_index = 0
+
+for employee in employees:
+    employees_dict[employee] = raw_availabilities[avbl_index: avbl_index + total_shifts]
+    avbl_index += total_shifts
+
 
 # Step 2: Step through the schedule and try to schedule someone, checking the constraints to see if its possible.
 # Step 3: Remove the guide from the queue if they can be scheduled
 # Step 4: Keep track of how many times people have been scheduled to enforce fairness
 # Step 5: Update the database with the new schedule information
 # Step 6: ML to make it good
+
+def main():
+    print(employees_dict)
+
+
+if __name__ == '__main__':
+    main()
