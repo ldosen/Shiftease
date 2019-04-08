@@ -261,3 +261,4 @@ jspm_packages/
 build/Release
 .npm
 .env
+bundle.js
