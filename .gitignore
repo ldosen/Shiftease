@@ -262,3 +262,5 @@ build/Release
 .npm
 .env
 bundle.js
+templates/public/bundle.js
+.vscode
