@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
-import Routes from "../Routes"
+// import Routes from "../Routes"
 import { LinkContainer } from "react-router-bootstrap";
 
 export default class Login extends Component {
