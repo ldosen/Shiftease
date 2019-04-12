@@ -13,14 +13,18 @@ render() {
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/">Shift Ease</Link>
+            <Link to="/">Scratch</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
-            <NavItem href="/signup">Signup</NavItem>
-            <NavItem href="/login">Login</NavItem>
+            <LinkContainer to="/signup">
+              <NavItem>Signup</NavItem>
+            </LinkContainer>
+            <LinkContainer to="/login">
+              <NavItem>Login</NavItem>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -28,6 +32,7 @@ render() {
     </div>
   );
 }
+
 
 }
 
