@@ -16,6 +16,7 @@ class App extends Component {
             <Navbar.Toggle />
           </Navbar.Header>
         </Navbar>
+        <Routes />
       </div>
     );
   }
