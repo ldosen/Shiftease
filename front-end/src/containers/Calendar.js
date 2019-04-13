@@ -109,7 +109,11 @@ class Calendar extends React.Component {
     if (formattedDate in scheduledShifts) {
       console.log("key in scheduledShifts");
       console.log(scheduledShifts[formattedDate]);
-      return `${scheduledShifts[formattedDate]}`;
+      var result = "";
+      for (var shift in scheduledShifts[formattedDate]) {
+        result = result + shift + scheduledShifts[formattedDate][shift];
+      }
+      return result;
     } else {
       return null;
     }
