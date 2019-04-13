@@ -1,11 +1,20 @@
 import "./Calendar.css";
 import React from "react";
 import dateFns from "date-fns";
+import Shift from "./Shift";
+
+const scheduledShifts = {
+  10: { "9am": "Ramsha", "10am": "Somto", "11am": "Maha" },
+  16: { "8am": "Maha", "10am": "Luke" },
+  27: { "12pm": "Jonathan" }
+};
+
 class Calendar extends React.Component {
   state = {
     currentMonth: new Date(),
     selectedDate: new Date()
   };
+
   renderHeader() {
     const dateFormat = "MMMM YYYY";
     return (
@@ -64,6 +73,7 @@ class Calendar extends React.Component {
             key={day}
             onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
           >
+            <span className="shifts">{this.renderShifts(formattedDate)}</span>
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
           </div>
@@ -94,6 +104,17 @@ class Calendar extends React.Component {
       currentMonth: dateFns.subMonths(this.state.currentMonth, 1)
     });
   };
+
+  renderShifts = formattedDate => {
+    if (formattedDate in scheduledShifts) {
+      console.log("key in scheduledShifts");
+      console.log(scheduledShifts[formattedDate]);
+      return `${scheduledShifts[formattedDate]}`;
+    } else {
+      return null;
+    }
+  };
+
   render() {
     return (
       <div className="calendar">
