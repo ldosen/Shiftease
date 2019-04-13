@@ -1,4 +1,4 @@
-import './Calendar.css';
+import "./Calendar.css";
 import React from "react";
 import dateFns from "date-fns";
 class Calendar extends React.Component {
@@ -57,7 +57,9 @@ class Calendar extends React.Component {
             className={`col cell ${
               !dateFns.isSameMonth(day, monthStart)
                 ? "disabled"
-                : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
+                : dateFns.isSameDay(day, selectedDate)
+                ? "selected"
+                : ""
             }`}
             key={day}
             onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
