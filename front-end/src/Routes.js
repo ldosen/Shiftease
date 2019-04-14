@@ -10,7 +10,7 @@ export default () =>
   <Switch>
     <Route path="/" exact component={Home} />
     <Route path="/login" exact component={Login} />
-    <Route path="/sign-up" exact component={Signup} />
+    <Route path="/signup" exact component={Signup} />
     <Route path="/calendar" exact component={Calendar} />
     {/* Catch all unmatched routes if all routes have failed or can't find the routes */}
     <Route component={NotFound} />
