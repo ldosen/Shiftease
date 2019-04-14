@@ -73,9 +73,9 @@ class Calendar extends React.Component {
             key={day}
             onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
           >
-            <span className="shifts">{this.renderShifts(formattedDate)}</span>
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
+            <p className="shifts">{this.renderShifts(formattedDate)}</p>
           </div>
         );
         day = dateFns.addDays(day, 1);
@@ -109,11 +109,13 @@ class Calendar extends React.Component {
     if (formattedDate in scheduledShifts) {
       console.log("key in scheduledShifts");
       console.log(scheduledShifts[formattedDate]);
-      var result = "";
+      var result = [];
       for (var shift in scheduledShifts[formattedDate]) {
-        result = result + shift + scheduledShifts[formattedDate][shift];
+        result.push([shift, scheduledShifts[formattedDate][shift]]);
       }
-      return result;
+      return result.map(i => {
+        return <Shift timeslot={i[0]} employee={i[1]} />;
+      });
     } else {
       return null;
     }
