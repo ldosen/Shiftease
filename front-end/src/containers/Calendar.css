@@ -136,6 +136,8 @@ main {
   cursor: pointer;
   background: var(--neutral-color);
   transition: 0.25s ease-out;
+  display: flex;
+  align-items: space-between;
 }
 .calendar .body .cell:hover {
   background: var(--bg-color);

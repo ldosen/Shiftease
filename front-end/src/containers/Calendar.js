@@ -75,7 +75,7 @@ class Calendar extends React.Component {
           >
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
-            <p className="shifts">{this.renderShifts(formattedDate)}</p>
+            <p>{this.renderShifts(formattedDate)}</p>
           </div>
         );
         day = dateFns.addDays(day, 1);
