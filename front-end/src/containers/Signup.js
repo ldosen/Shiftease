@@ -13,7 +13,8 @@ export default class Login extends Component {
             email: "",
             password: "",
             first_name: "",
-            last_name: ""
+            last_name: "",
+            user_type: ""
 
 
         };
@@ -78,7 +79,7 @@ export default class Login extends Component {
                             onChange={this.handleChange}
                         />
                     </FormGroup>
-                    <FormGroup>
+                    <FormGroup controlId="user_type">
                         <Radio name="radioGroup" inline>
                             Employee
       </Radio>{' '}
