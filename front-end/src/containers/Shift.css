@@ -1,0 +1,16 @@
+.shift {
+  margin: 0px;
+  font-size: 0.9em;
+  color: #fff;
+}
+
+.shift-wrapper {
+  padding: 0.05em;
+  padding-left: 0.4em;
+  margin: 0.05em;
+  margin-left: 0.5em;
+  float: left;
+  background: linear-gradient(45deg, #1a8fff 0%, #53cbf1 100%);
+  border-radius: 0.25em;
+  width: 75%;
+}
