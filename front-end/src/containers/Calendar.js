@@ -2,6 +2,7 @@ import "./Calendar.css";
 import React from "react";
 import dateFns from "date-fns";
 import Shift from "./Shift";
+import { Button } from "react-bootstrap";
 
 const scheduledShifts = {
   10: { "9am": "Ramsha", "10am": "Somto", "11am": "Maha" },
@@ -67,9 +68,9 @@ class Calendar extends React.Component {
               !dateFns.isSameMonth(day, monthStart)
                 ? "disabled"
                 : dateFns.isSameDay(day, selectedDate)
-                ? "selected"
-                : ""
-            }`}
+                  ? "selected"
+                  : ""
+              }`}
             key={day}
             onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
           >
@@ -123,12 +124,15 @@ class Calendar extends React.Component {
 
   render() {
     return (
+      <div>
+        <Button>Create</Button>
       <div className="calendar">
         {this.renderHeader()}
         {this.renderDays()}
         {this.renderCells()}
       </div>
+     </div>
     );
-  }
+    }
 }
 export default Calendar;
