@@ -13,7 +13,8 @@ const scheduledShifts = {
 class Calendar extends React.Component {
   state = {
     currentMonth: new Date(),
-    selectedDate: new Date()
+    selectedDate: new Date(),
+    calendarFilled: false
   };
 
   renderHeader() {
@@ -68,15 +69,15 @@ class Calendar extends React.Component {
               !dateFns.isSameMonth(day, monthStart)
                 ? "disabled"
                 : dateFns.isSameDay(day, selectedDate)
-                  ? "selected"
-                  : ""
-              }`}
+                ? "selected"
+                : ""
+            }`}
             key={day}
             onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
           >
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
-            <p>{this.renderShifts(formattedDate)}</p>
+            <p>{this.checkCalendarFilled(formattedDate)}</p>
           </div>
         );
         day = dateFns.addDays(day, 1);
@@ -106,6 +107,20 @@ class Calendar extends React.Component {
     });
   };
 
+  checkCalendarFilled = formattedDate => {
+    if (this.state.calendarFilled) {
+      return this.renderShifts(formattedDate);
+    } else {
+      return null;
+    }
+  };
+
+  fillCalendar = () => {
+    this.setState({ calendarFilled: true });
+    console.log("button clicked");
+    return null;
+  };
+
   renderShifts = formattedDate => {
     if (formattedDate in scheduledShifts) {
       console.log("key in scheduledShifts");
@@ -125,14 +140,14 @@ class Calendar extends React.Component {
   render() {
     return (
       <div>
-        <Button>Create</Button>
-      <div className="calendar">
-        {this.renderHeader()}
-        {this.renderDays()}
-        {this.renderCells()}
+        <Button onClick={this.fillCalendar}>Create</Button>
+        <div className="calendar">
+          {this.renderHeader()}
+          {this.renderDays()}
+          {this.renderCells()}
+        </div>
       </div>
-     </div>
     );
-    }
+  }
 }
 export default Calendar;
