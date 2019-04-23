@@ -3,6 +3,9 @@ import React from "react";
 import dateFns from "date-fns";
 import Shift from "./Shift";
 import { Button } from "react-bootstrap";
+import {SplitButton} from "react-bootstrap";
+import {MenuItem} from "react-bootstrap";
+
 
 const scheduledShifts = {
   10: { "9am": "Ramsha", "10am": "Somto", "11am": "Maha" },
@@ -121,10 +124,23 @@ class Calendar extends React.Component {
       return null;
     }
   };
+  
 
   render() {
+    
+  
+
     return (
       <div>
+        <div>
+        <SplitButton title=" Unscheduled Employees " pullRight id="split-button-pull-right">
+  <MenuItem eventKey="1">Zac</MenuItem>
+  <MenuItem eventKey="2">Emmanuel</MenuItem>
+  <MenuItem eventKey="3">Jonathan</MenuItem>
+  <MenuItem divider />
+  {/* <MenuItem eventKey="4">Separated link</MenuItem> */}
+</SplitButton>
+        </div>
         <Button>Create</Button>
       <div className="calendar">
         {this.renderHeader()}
@@ -133,6 +149,7 @@ class Calendar extends React.Component {
       </div>
      </div>
     );
-    }
+    } 
 }
 export default Calendar;
+
