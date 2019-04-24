@@ -5,18 +5,46 @@ import Shift from "./Shift";
 import { Button } from "react-bootstrap";
 
 const scheduledShifts = {
-  10: { "9am": "Ramsha", "10am": "Somto", "11am": "Maha" },
-  16: { "8am": "Maha", "10am": "Luke" },
-  27: { "12pm": "Jonathan" }
+  2019: {
+    4: {
+      10: { "9am": "Ramsha", "10am": "Somto", "11am": "Maha" },
+      16: { "8am": "Maha", "10am": "Luke" },
+      27: { "12pm": "Jonathan" }
+    }
+  }
 };
 
 class Calendar extends React.Component {
   state = {
     currentMonth: new Date(),
     selectedDate: new Date(),
-    calendarFilled: false
+    calendarFilled: false,
+    scheduledShifts: scheduledShifts
   };
-
+  /*
+  componentDidMount() {
+    fetch("https://shiftease.herokuapp.com/integrationdemo")
+      .then(res => res.json())
+      .then(
+        result => {
+          console.log(result);
+          this.setState({
+            scheduledShifts: result
+          });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        error => {
+          console.log(error);
+          //this.setState({
+          //isLoaded: true,
+          //error
+          //});
+        }
+      );
+  }
+*/
   renderHeader() {
     const dateFormat = "MMMM YYYY";
     return (
@@ -62,6 +90,11 @@ class Calendar extends React.Component {
     while (day <= endDate) {
       for (let i = 0; i < 7; i++) {
         formattedDate = dateFns.format(day, dateFormat);
+        var fullDate = [
+          dateFns.format(day, "YYYY"),
+          dateFns.format(day, "M"),
+          formattedDate
+        ];
         const cloneDay = day;
         days.push(
           <div
@@ -77,9 +110,10 @@ class Calendar extends React.Component {
           >
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
-            <p>{this.checkCalendarFilled(formattedDate)}</p>
+            <p>{this.checkCalendarFilled(fullDate)}</p>
           </div>
         );
+        console.log("fullDate: " + fullDate);
         day = dateFns.addDays(day, 1);
       }
       rows.push(
@@ -107,9 +141,9 @@ class Calendar extends React.Component {
     });
   };
 
-  checkCalendarFilled = formattedDate => {
+  checkCalendarFilled = fullDate => {
     if (this.state.calendarFilled) {
-      return this.renderShifts(formattedDate);
+      return this.renderShifts(fullDate);
     } else {
       return null;
     }
@@ -121,17 +155,31 @@ class Calendar extends React.Component {
     return null;
   };
 
-  renderShifts = formattedDate => {
-    if (formattedDate in scheduledShifts) {
-      console.log("key in scheduledShifts");
-      console.log(scheduledShifts[formattedDate]);
-      var result = [];
-      for (var shift in scheduledShifts[formattedDate]) {
-        result.push([shift, scheduledShifts[formattedDate][shift]]);
+  renderShifts = fullDate => {
+    if (fullDate[0] in this.state.scheduledShifts) {
+      if (fullDate[1] in this.state.scheduledShifts[fullDate[0]]) {
+        if (
+          fullDate[2] in this.state.scheduledShifts[fullDate[0]][fullDate[1]]
+        ) {
+          //console.log("key in this.state.scheduledShifts");
+          //console.log(this.state.scheduledShifts[formattedDate]);
+
+          var result = [];
+          for (var shift in this.state.scheduledShifts[fullDate[0]][
+            fullDate[1]
+          ][fullDate[2]]) {
+            result.push([
+              shift,
+              this.state.scheduledShifts[fullDate[0]][fullDate[1]][fullDate[2]][
+                shift
+              ]
+            ]);
+          }
+          return result.map(i => {
+            return <Shift timeslot={i[0]} employee={i[1]} />;
+          });
+        }
       }
-      return result.map(i => {
-        return <Shift timeslot={i[0]} employee={i[1]} />;
-      });
     } else {
       return null;
     }
