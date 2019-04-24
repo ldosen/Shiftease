@@ -13,7 +13,7 @@ export default class Home extends Component {
           <h1>Shift Ease</h1>
           <p>A simple employee scheduling app</p>
           </div>
-        <img src={Campus} width="800" height="400" className="img-responsive"/>
+        <img src={Campus} width="800" height="400" className="img-responsive center-block"/>
       </div>
     );
   }
