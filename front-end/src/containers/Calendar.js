@@ -21,26 +21,27 @@ const oldscheduledShifts = {
 class Calendar extends React.Component {
   state = {
     currentMonth: new Date(),
-    selectedDate: new Date(),
-    calendarFilled: false,
-    scheduledShifts: undefined,
-    unschedulable: undefined
+    selectedDate: new Date()
   };
   constructor(props) {
     super(props);
     this.state = {
       currentMonth: new Date(),
       selectedDate: new Date(),
-      open: false
+      open: false,
+      calendarFilled: false,
+      scheduledShifts: undefined,
+      unschedulable: undefined,
+      formDate: undefined
     };
-    this.openModal = this.openModal.bind(this)
-    this.closeModal = this.closeModal.bind(this)
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
   openModal() {
-    this.setState({ open: true })
+    this.setState({ open: true });
   }
   closeModal() {
-    this.setState({ open: false })
+    this.setState({ open: false });
   }
 
   componentDidMount() {
@@ -89,7 +90,10 @@ class Calendar extends React.Component {
         </div>
       );
     }
-    return <div className="days row">{days}</div>; } renderCells() { const { currentMonth, selectedDate } = this.state;
+    return <div className="days row">{days}</div>;
+  }
+  renderCells() {
+    const { currentMonth, selectedDate } = this.state;
     const monthStart = dateFns.startOfMonth(currentMonth);
     const monthEnd = dateFns.endOfMonth(monthStart);
     const startDate = dateFns.startOfWeek(monthStart);
@@ -197,17 +201,19 @@ class Calendar extends React.Component {
     }
   };
 
-
   render() {
-
-
-
     return (
       <div>
         <Button onClick={this.fillCalendar}>Create</Button>
         <div>
-          <SplitButton title=" Unscheduled Employees " pullRight id="split-button-pull-right">
-            <MenuItem eventKey="1" onClick={this.openModal}>Zac</MenuItem>
+          <SplitButton
+            title=" Unscheduled Employees "
+            pullRight
+            id="split-button-pull-right"
+          >
+            <MenuItem eventKey="1" onClick={this.openModal}>
+              Zac
+            </MenuItem>
             <MenuItem eventKey="2">Emmanuel</MenuItem>
             <MenuItem eventKey="3">Jonathan</MenuItem>
             <MenuItem divider />
@@ -220,16 +226,13 @@ class Calendar extends React.Component {
             <div>
               <a className="close" onClick={this.closeModal}>
                 &times;
-            </a>
+              </a>
               <FormGroup controlId="first_name" bsSize="large">
                 <ControlLabel>Date</ControlLabel>
-                <FormControl
-                  type="text"
-                  value={this.state.first_name}
-                  onChange={this.handleChange}
-                />
+                <FormControl type="date" onChange={this.handleChange} />
+                <ControlLabel>Time</ControlLabel>
+                <FormControl type="time" onChange={this.handleChange} />
               </FormGroup>
-
             </div>
           </Popup>
         </div>
