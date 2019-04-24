@@ -3,9 +3,10 @@ import React from "react";
 import dateFns from "date-fns";
 import Shift from "./Shift";
 import { Button } from "react-bootstrap";
-import {SplitButton} from "react-bootstrap";
-import {MenuItem} from "react-bootstrap";
-
+import { SplitButton } from "react-bootstrap";
+import { MenuItem } from "react-bootstrap";
+import Popup from "reactjs-popup";
+import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
 const scheduledShifts = {
   10: { "9am": "Ramsha", "10am": "Somto", "11am": "Maha" },
@@ -14,10 +15,22 @@ const scheduledShifts = {
 };
 
 class Calendar extends React.Component {
-  state = {
-    currentMonth: new Date(),
-    selectedDate: new Date()
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentMonth: new Date(),
+      selectedDate: new Date(),
+      open: false
+    };
+    this.openModal = this.openModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
+  }
+  openModal() {
+    this.setState({ open: true })
+  }
+  closeModal() {
+    this.setState({ open: false })
+  }
 
   renderHeader() {
     const dateFormat = "MMMM YYYY";
@@ -124,32 +137,50 @@ class Calendar extends React.Component {
       return null;
     }
   };
-  
+
 
   render() {
-    
-  
+
+
 
     return (
       <div>
         <div>
-        <SplitButton title=" Unscheduled Employees " pullRight id="split-button-pull-right">
-  <MenuItem eventKey="1">Zac</MenuItem>
-  <MenuItem eventKey="2">Emmanuel</MenuItem>
-  <MenuItem eventKey="3">Jonathan</MenuItem>
-  <MenuItem divider />
-  {/* <MenuItem eventKey="4">Separated link</MenuItem> */}
-</SplitButton>
+          <SplitButton title=" Unscheduled Employees " pullRight id="split-button-pull-right">
+            <MenuItem eventKey="1" onClick={this.openModal}>Zac</MenuItem>
+            <MenuItem eventKey="2">Emmanuel</MenuItem>
+            <MenuItem eventKey="3">Jonathan</MenuItem>
+            <MenuItem divider />
+          </SplitButton>
+          <Popup
+            open={this.state.open}
+            closeOnDocumentClick
+            onClose={this.closeModal}
+          >
+            <div>
+              <a className="close" onClick={this.closeModal}>
+                &times;
+            </a>
+              <FormGroup controlId="first_name" bsSize="large">
+                <ControlLabel>First Name</ControlLabel>
+                <FormControl
+                  type="text"
+                  value={this.state.first_name}
+                  onChange={this.handleChange}
+                />
+              </FormGroup>
+
+            </div>
+          </Popup>
         </div>
         <Button>Create</Button>
-      <div className="calendar">
-        {this.renderHeader()}
-        {this.renderDays()}
-        {this.renderCells()}
+        <div className="calendar">
+          {this.renderHeader()}
+          {this.renderDays()}
+          {this.renderCells()}
+        </div>
       </div>
-     </div>
     );
-    } 
+  }
 }
 export default Calendar;
-
