@@ -4,7 +4,7 @@ import dateFns from "date-fns";
 import Shift from "./Shift";
 import { Button } from "react-bootstrap";
 
-const scheduledShifts = {
+const oldscheduledShifts = {
   2019: {
     4: {
       10: { "9am": "Ramsha", "10am": "Somto", "11am": "Maha" },
@@ -19,9 +19,10 @@ class Calendar extends React.Component {
     currentMonth: new Date(),
     selectedDate: new Date(),
     calendarFilled: false,
-    scheduledShifts: scheduledShifts
+    scheduledShifts: undefined,
+    unschedulable: undefined
   };
-  /*
+
   componentDidMount() {
     fetch("https://shiftease.herokuapp.com/integrationdemo")
       .then(res => res.json())
@@ -29,22 +30,16 @@ class Calendar extends React.Component {
         result => {
           console.log(result);
           this.setState({
-            scheduledShifts: result
+            scheduledShifts: result.schedule,
+            unschedulable: result.unschedulable
           });
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
         error => {
           console.log(error);
-          //this.setState({
-          //isLoaded: true,
-          //error
-          //});
         }
       );
   }
-*/
+
   renderHeader() {
     const dateFormat = "MMMM YYYY";
     return (
