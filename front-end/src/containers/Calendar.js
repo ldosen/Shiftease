@@ -222,7 +222,7 @@ class Calendar extends React.Component {
                 &times;
             </a>
               <FormGroup controlId="first_name" bsSize="large">
-                <ControlLabel>First Name</ControlLabel>
+                <ControlLabel>Date</ControlLabel>
                 <FormControl
                   type="text"
                   value={this.state.first_name}
@@ -233,7 +233,6 @@ class Calendar extends React.Component {
             </div>
           </Popup>
         </div>
-        <Button>Create</Button>
         <div className="calendar">
           {this.renderHeader()}
           {this.renderDays()}
